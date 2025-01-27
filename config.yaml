@@ -1,0 +1,6 @@
+database:
+  user: postgres
+  password: 1
+  host: localhost
+  port: 5432
+  dbname: sentiment_db
