@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from controllers.tweet_controller import tweet_bp
+from controllers.sentiment_controller import sentiment_bp
 from models.tweet_model import Base
 from utils.db import engine
 import yaml
@@ -15,6 +16,7 @@ def create_app():
 
     # Register blueprints
     app.register_blueprint(tweet_bp, url_prefix='/api')
+    app.register_blueprint(sentiment_bp, url_prefix='/api')
 
     # Initialize Database
     Base.metadata.create_all(bind=engine)
